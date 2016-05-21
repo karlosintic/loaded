@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body { height: 100%; }
+body {
+    background: #eee;
+    color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+#year {
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+.bar {
+    width: 50vw;
+    background: white;
+}
+#per {
+    background: lightblue;
+    color: #565656;
+    font-size: 40px;
+    width: 0;
+    overflow: hidden;
+    padding-left: 7px;
+    transition: .5s;
+}
+a {
+    color: inherit;
+}
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+}
