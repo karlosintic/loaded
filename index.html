@@ -1,105 +1,25 @@
+<!DOCTYPE html>
+
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>loaded</title>
-<style>
-body{
-	margin:0;
-}
 
-.front {
-    height: 100vh;
- 	background: url(https://unsplash.it/g/1920/1080?random&blur) no-repeat center center fixed; 
-  	-webkit-background-size: cover;
- 	-moz-background-size: cover;
- 	-o-background-size: cover;
- 	background-size: cover;
-    background-color: #565656;
-    position: relative;   
-}
-
-.footer {
-    position: fixed;
-    bottom: 0;
-	background-color: #f0f0f0;
-	font-family: 'Oswald', sans-serif;
-	color: #565656;  
-	font-size: 12px;	  
-}
-
-#per{
-	padding-top: 5px;
-	padding-bottom: 5px;	
-	padding-left: 15px;
-	padding-right: 15px;	
-	background-color: white;
-	font-family: 'Oswald', sans-serif;
-	color: #565656;
-	font-size: 40px;
-	position: fixed;
-    top: 42%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-a {
-	  color: inherit; 
-  	text-decoration: inherit; 
-}
-</style>
-
-<meta charset="UTF-8">
-<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+    <link href='style.css' rel='stylesheet'>
 </head>
+
 <body>
-<center>
-<div class="front">
-
-<p id="per">
-</p>
-</div>
-
-<div class="footer">
-<a href="http://karlo-sintic.from.hr">by karlo sintic.</a>
-</div>
-</center>
-
-
-<script>
-window.setInterval(function(){
-    now = new Date();
-    start = new Date(now.getFullYear(), 0, 0);
-    diff = now - start;
-    oneDay = 1000 * 60 * 60 * 24;
-    day = Math.floor(diff / oneDay) - 1;
-    n = now.getTime();
-    sad = new Date(),
-        then = new Date(
-            sad.getFullYear(),
-            sad.getMonth(),
-            sad.getDate(),
-            0, 0, 0),
-        mil = sad.getTime() - then.getTime();
-    sectoday = Math.round(mil / 1000);
-    sec = (day * 86400) + sectoday;
-    year = now.getFullYear();
-    if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) {
-        secsum = 366 * 86400;
-    } else {
-        secsum = 365 * 86400;
-    }
-
-    per = (sec / secsum) * 100;
-
-    function roundToTwo(num) {
-        return +(Math.round(per + "e+5") + "e-5");
-    }
-
-    per = roundToTwo(per);
-    out = year + ' is ' + per + '% loaded';
-
-
-    document.getElementById("per").innerHTML = out;
-    }, 1000);
-</script>
+    <section>
+        <p id="year"></p>
+        <div class="bar">
+            <p id="per"></p>
+        </div>
+    </section>
+    <footer>
+        This tool brought to you by <a href="http://erikboesen.com">Erik Boesen</a> and <a href="http://karlo-sintic.from.hr">Karlo Sintic</a>.
+    </footer>
+    <script src="script.js"></script>
+</body>
 
 </html>
